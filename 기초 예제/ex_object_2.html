@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script type="text/javascript">
+
+    var grades = {
+        'list' : {'admin': 100, 'lkcx': 60, 'user': 40},
+        'show' : function(){
+            for(var name in this.list){
+                document.write('<li>' + name + ':' + this.list[name] + '</li>');
+            }
+        }
+    };
+    grades.show();
+    </script>
+</body>
+</html>
