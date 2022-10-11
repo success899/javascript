@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script type="text/javascript">
+        function get_members(){
+            return ['admin', 'success', 'lkcx'];
+        }
+    
+        members = get_members();
+        for(i = 0; i < members.length; i++){
+            // toUpperCase() : 대문자로 변환
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.push('test');
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members = members.concat(['user', 'super']);
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.unshift('owner');
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.splice(1,0, 'add');
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.shift();    // 0번 배열
+        members.pop();      // 마지막 배열
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.sort();
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+        members.reverse();
+        for(i = 0; i < members.length; i++){
+            document.write(members[i].toUpperCase() + '<br />');   
+        }
+        document.write('<br />' + '<br />')
+
+
+    </script>
+</body>
+</html>
