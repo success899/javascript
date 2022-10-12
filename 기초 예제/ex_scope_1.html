@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script>
+        var vscope = 'global';                              // 전역변수
+        function fscope1(){
+            return vscope;
+        }
+        function fscope2(){
+            var vscope = 'local';                           // 지역변수로서 함수 내부에서만 사용가능 한 vscope를 선언한다.
+            return vscope;
+        }
+        document.write('<h1>' + fscope1() + '</h1>');
+        document.write('<h1>' + fscope2() + '</h1>');
+
+        function fscope3(){
+            vscope = 'local';                               // 전역변수의 vscope의 값에 덮어 씌운다.
+            return vscope;
+        }
+        document.write('<h1>' + fscope3() + '</h1>');
+    </script>
+</body>
+</html>
