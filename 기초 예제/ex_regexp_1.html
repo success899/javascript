@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script>
+        var pattern = /a/;          //   var pattern = new RegExp('a');  같은 의미
+        document.write('<h1>' + pattern.exec('abcdef') + '</h1>');
+        document.write('<h1>' + pattern.exec('bcdefg') + '</h1>');
+        document.write('<h1>' + pattern.test('abcdef') + '</h1>');
+        document.write('<h1>' + pattern.test('bcdefg') + '</h1>');
+
+        document.write('<h1>' + 'abcdef'.match(pattern) + '</h1>');
+        document.write('<h1>' + 'bcdefg'.match(pattern) + '</h1>');
+        document.write('<h1>' + 'abcdef'.replace(pattern, 'A') + '</h1>');
+    </script>
+</body>
+</html>
