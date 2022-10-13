@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script type="text/javascript">
+        // this
+        // this는 함수 내에서 함수 호출 맥락(context)를 의미한다.
+        // 맥락이라는 것은 상황에 따라서 달라진다는 의미인데 즉 함수를 어떻게 호출하느냐에 따라서 this가 가리키는 대상이 달라진다는 뜻이다. 
+
+        // 함수를 호출하면 window의 객체의 메소드이기 때문에 window 와 this가 같은 것을 확인 할 수 있다.
+        function func1(){
+            if(window === this){
+                document.write('<h1>' + "window === this" + '</h1>');
+            }
+        }
+        func1(); 
+
+
+        // 함수 안에서의 this는 그 함수가 소속되어 있는 객체를 가르킨다.
+        var o = {
+            func2 : function(){
+                if(o === this){
+                    document.write('<h1>' + "o === this" + '</h1>');
+                }
+            }
+        }
+        o.func2();   
+
+        // 생성자는 빈 객체를 만든다. 그리고 이 객체내에서 this는 만들어진 객체를 가르킨다.
+        // 생성자 new가 없을 때와 있을 때 차이
+        var funcThis = null; 
+ 
+        function Func3(){
+            funcThis = this;
+        }
+        var o1 = Func3();                           // 함수를 호출하면 window의 객체의 메소드이기 때문에 window 와 funcThis 같은 것을 확인 할 수 있다.
+        if(funcThis === window){
+            document.write('<h1> window </h1>');
+        }
+        
+        var o2 = new Func3();
+        if(funcThis === o2){
+            document.write('<h1> o2 </h1>');
+        }
+
+    
+        // 생성자가 실행되기 전까지는 객체는 변수에도 할당될 수 없기 때문에 this가 아니면 객체에 대한 어떠한 작업을 할 수 없기 때문이다. 
+        function Func4(){
+            document.write('<h1>' + o3 + '</h1>');
+        }
+        var o3 = new Func4();
+
+    </script>
+</body>
+</html>
