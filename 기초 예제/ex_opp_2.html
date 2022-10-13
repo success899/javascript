@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script type="text/javascript">
+        // 생성자, new
+        // 생성자 내에서 객체의 프로퍼티(객체 내의 변수)를 정의하고 있음 -> 초기화
+        // 이를 통해서 코드의 재사용성이 대폭 높아졌다.
+        // 또한 생성자 함수는 일반함수와 구분하기 위해서 첫글자를 대문자로 표시한다.
+        function Person(name){
+            this.name = name;
+            this.introduce = function(){
+                return 'My name is '+this.name; 
+            }   
+        }
+        var p1 = new Person('JH');
+        document.write(p1.introduce()+"<br />");
+        
+        var p2 = new Person('HJ');
+        document.write(p2.introduce());
+
+    </script>
+</body>
+</html>
