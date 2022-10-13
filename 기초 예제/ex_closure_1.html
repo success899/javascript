@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script>
+        // 예제를 보면 outter 함수 내부에 inner 라는 함수가 정의되어 있다.
+        // 내부함수의 변수인 title이 외부함수 outter에 있어도 접근할 수 있다.
+
+        function outter1(){
+            function inner1(){
+                var title = 'hello world'; 
+                document.write('<h1>' + title + '</h1>');
+            }
+            inner1();
+        }
+        outter1();
+
+        function outter2(){
+            var title = 'hello world';  
+            function inner2(){        
+                document.write('<h1>' + title + '</h1>');
+            }
+            inner2();
+        }
+        outter2();
+    </script>
+</body>
+</html>
