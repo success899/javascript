@@ -24,7 +24,7 @@
 
         // 코드 동작 설명
         // 생성자 Sub를 통해서 만들어진 객체 o가 Ultra의 프로퍼티 ultraProp에 접근 가능한 것은 prototype 체인으로 Sub와 Ultra가 연결되어 있기 때문이다. 내부적으로는 아래와 같은 일이 일어난다.
-        // 1.객체 o에서 ultraProp를 찾는다.
+        // 1. 객체 o에서 ultraProp를 찾는다.
         // 2. 없다면 Sub.prototype.ultraProp를 찾는다.
         // 3. 없다면 Super.prototype.ultraProp를 찾는다.
         // 4. 없다면 Ultra.prototype.ultraProp를 찾는다.
