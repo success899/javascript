@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+</head>
+<body>
+    <script type="text/javascript">
+        // 참조
+        
+        // 원시 데이터 타입
+        var a = 1;
+        function func(b){
+            b = 2;
+        }
+        func(a);
+        document.write(a + '<br>');   // 1
+
+        // 참조 데이터 타입을 인자
+        // 함수 func의 파라미터 b로 전달된 값은 객체 a이다. (b = a) b를 새로운 객체로 대체하는 것은 (b = {'id':2}) b가 가르키는 객체를 변경하는 것이기 때문에 객체 a에 영향을 주지 않는다.
+        var c = {'id':1};
+        function func1(d){
+            d = {'id':2};
+        }
+        func1(c);
+        document.write(c.id + '<br>');  // 1
+
+        // 파라미터 b는 객체 a의 레퍼런스다.
+        // 이 값의 속성을 바꾸면 그 속성이 소속된 객체를 대상으로 수정작업을 한 것이 되기 때문에 b의 변경은 a에도 영향을 미치게 된다. 
+        var e = {'id':1};
+        function func2(f){
+            f.id = 2;
+        }
+        func2(e);
+        document.write(e.id);  // 2
+    </script>
+</body>
+</html>
